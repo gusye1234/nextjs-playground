@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={cn(
         'min-h-screen font-sans subpixel-antialiased grainy'
       )}>
-        <Header href='/dashboard'/>
+        <Header href='/'/>
         <MaxWidthWrapper className='flex flex-row justify-center divide-x-2'>
           {user}
           {team}
