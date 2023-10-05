@@ -1,7 +1,8 @@
-import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { cn } from '@/lib/utils'
+import Header from '@/components/Header'
+import MaxWidthWrapper from '@/components/MaxWidthWrapper'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,15 +12,22 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children
+  children, user, team
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  user: React.ReactNode,
+  team: React.ReactNode
 }) {
   return (
     <html lang="en" className='light'>
       <body className={cn(
         'min-h-screen font-sans subpixel-antialiased grainy'
       )}>
+        <Header href='/dashboard'/>
+        <MaxWidthWrapper className='flex flex-row justify-center divide-x-2'>
+          {user}
+          {team}
+        </MaxWidthWrapper>
         {children}
       </body>
     </html>
