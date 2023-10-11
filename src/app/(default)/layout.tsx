@@ -1,9 +1,7 @@
-import './globals.css';
 import type { Metadata } from 'next';
-import { theme } from '@/components/theme';
 import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils';
-import { ThemeProvider } from '@/components/theme-provider';
+import Header from '@/components/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,14 +20,8 @@ export default function RootLayout({
       <body
         className={cn('min-h-screen font-sans subpixel-antialiased grainy')}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <Header />
+        {children}
       </body>
     </html>
   );
